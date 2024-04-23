@@ -1,13 +1,12 @@
-import { Outlet } from 'react-router-dom'
 import classes from './css/Index.module.css'
-import Header from '../components/Header'
+import CardList from '../components/CardList'
 
 const Index = () => {
     return (
-        <>
-            <Header/>
-            <Outlet/>
-        </>
+        <main className={classes.cardList}>
+            <CardList category='active'/>
+            <CardList category='archive'/>
+        </main>
     )
 }
 
