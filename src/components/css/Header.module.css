@@ -1,0 +1,53 @@
+.header{
+    background-color: #FDFDFD;
+    padding: 1.5rem;
+    min-height: 5.6rem;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 2.4rem;
+    
+}
+.header__wrapper{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+}
+.logo__image{
+
+}
+.logo__text{
+
+}
+.headerActions{
+    gap: 0.4rem;
+}
+.headerActions__wrapper{
+    gap: 2rem;
+}
+.like{
+    height: 2.4rem;
+}
+.notification{
+    height: 2.4rem;
+}
+.user{
+    gap: 0.8rem;
+
+}
+.user__image{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+    object-fit: cover;
+
+}
+.user__name{
+    font-size: 1.6rem;
+    color: #595959;
+}
