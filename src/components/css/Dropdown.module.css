@@ -19,3 +19,9 @@
     color: var(--colorAccent);
     cursor: pointer;
 }
+
+@media (max-width: 1400px) {
+    .dropdown {
+        right: 0;
+    }
+}

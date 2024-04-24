@@ -12,3 +12,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 4rem;
 }
+
+@media (max-width: 1150px) {
+    .cardList__wrapper {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
