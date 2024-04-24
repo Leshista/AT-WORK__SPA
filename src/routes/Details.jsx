@@ -5,7 +5,7 @@ import me from '../UI/images/me.jpg'
 
 const Details = () => {
     return (
-        <>
+        <div className={classes.details__wrapper}>
             <Link to={'/AT-WORK__SPA/'}>
                 <div className={classes.back__wrapper}>
                     <div className={classes.back__icon}>{back}</div>
@@ -13,45 +13,53 @@ const Details = () => {
                 </div>
             </Link>
             <article className={classes.details}>
-                <section className={classes.leftBlock}>
-                    <div className={classes.leftBlock__wrapper}>
-                        <img src={me} className={classes.details__image}></img>
-                        <p className={classes.details__option}>Данные профиля</p>
-                        <p className={classes.details__option}>Рабочее пространство</p>
-                        <p className={classes.details__option}>Приватность</p>
-                        <p className={classes.details__option}>Безопасность</p>
-                    </div>
+                <section className={classes.details__block}>
+                    <img src={me} className={classes.details__image}></img>
+                    <ul className={classes.details__list}>
+                        <li className={`${classes.details__item} ${classes.details__item_active}`}>Данные профиля</li>
+                        <li className={classes.details__item}>Рабочее пространство</li>
+                        <li className={classes.details__item}>Приватность</li>
+                        <li className={classes.details__item}>Безопасность</li>
+                    </ul>
                 </section>
-            </article>
-            <article className={classes.details}>
-                <section className={classes.rightBlock}>
-                    <div className={classes.rightBlock__wrapper}>
-                        <h1 className={classes.details__title}>Данные профиля</h1>
-                        <form className={classes.form}>
+                <section className={classes.details__block}>
+                    <h1 className={classes.details__title}>Данные профиля</h1>
+                    <form className={classes.form}>
+                        <div className={classes.form__item}>
                             <label className={classes.form__label} htmlFor='name'>Имя</label>
-                            <input className={classes.form__input} id='name' type='text' placeholder='Иван'></input>
+                            <input className={classes.form__input} id='name' type='text' placeholder='Иван' required></input>
+                        </div>
 
+                        <div className={classes.form__item}>
                             <label className={classes.form__label} htmlFor='alias'>Никнейм</label>
-                            <input className={classes.form__input} id='alias' type='text' placeholder='Ivan1234'></input>
+                            <input className={classes.form__input} id='alias' type='text' placeholder='Ivan1234' required></input>
+                        </div>
 
+                        <div className={classes.form__item}>
                             <label className={classes.form__label} htmlFor='email'>Почта</label>
-                            <input className={classes.form__input} id='email' type='email' placeholder='Ivan1234@mail.ru'></input>
+                            <input className={classes.form__input} id='email' type='email' placeholder='Ivan1234@mail.ru' required></input>
+                        </div>
 
+                        <div className={classes.form__item}>
                             <label className={classes.form__label} htmlFor='city'>Город</label>
-                            <input className={classes.form__input} id='city' type='text' placeholder='Санкт-Петербург'></input>
+                            <input className={classes.form__input} id='city' type='text' placeholder='Санкт-Петербург' required></input>
+                        </div>
 
+                        <div className={classes.form__item}>
                             <label className={classes.form__label} htmlFor='phone'>Телефон</label>
-                            <input className={classes.form__input} id='phone' type='phone' placeholder='8 (999) 111-23-23'></input>
+                            <input className={classes.form__input} id='phone' type='phone' placeholder='8 (999) 111-23-23' required></input>
+                        </div>
 
+                        <div className={classes.form__item}>
                             <label className={classes.form__label} htmlFor='company'>Название компании</label>
-                            <input className={classes.form__input} id='company' placeholder='AT-WORK'></input>
+                            <input className={classes.form__input} id='company' placeholder='AT-WORK' required></input>
+                        </div>
 
-                            <input className={classes.form__submit} type='submit'></input>
-                        </form>
-                    </div>
+                        <button className={classes.form__submit} type='submit'>Сохранить</button>
+                    </form>
                 </section>
             </article>
-        </>
+        </div>
     )
 }
 
