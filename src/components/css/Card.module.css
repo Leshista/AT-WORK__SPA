@@ -29,17 +29,20 @@
 }
 .card__title {
     font-size: var(--headline);
+    font-weight: var(--semibold);
     font-weight: bold;
     color: var(--colorAccent);
 }
 .card__subtitle {
     font-size: var(--text2);
+    font-weight: var(--medium);
     color: var(--color02);
 }
 .cardRight__bottomWrapper {
 }
 .card__city {
-    font-size: var(----caption);
+    font-size: var(--caption);
+    font-weight: var(--medium);
     color: var(--color03);
 }
 .dropdown__wrapper {
@@ -66,5 +69,8 @@
     }
     .card__image {
         width: 100%;
+    }
+    .card__city {
+        font-weight: var(--semibold);
     }
 }

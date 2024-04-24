@@ -3,6 +3,7 @@
 }
 .cardList__title {
     font-size: var(--title);
+    font-weight: var(--semibold);
     color: var(--color01);
 }
 .cardList__wrapper {

@@ -1,0 +1,40 @@
+.backdrop {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    cursor: default;
+}
+.popUp {
+    background-color: var(--color06);
+    width: 31rem;
+    position: fixed;
+    top: 40vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+    padding: 4rem;
+    border-radius: 1.6rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.popUp__close {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+}
+.popUp__close:hover {
+    cursor: pointer;
+}
+.popUp__ok {
+}
+.popUp__text {
+    font-size: var(--headline);
+    font-weight: var(--semibold);
+}
