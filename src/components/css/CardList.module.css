@@ -1,0 +1,14 @@
+.cardList__section {
+    margin-top: 6rem;
+}
+.cardList__title {
+    font-size: var(--title);
+    color: var(--color01);
+}
+.cardList__wrapper {
+    border-top: 1px solid var(--color04);
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+}

@@ -1,4 +1,40 @@
-html{
+html {
+    --color06: #fdfdfd;
+    --color05: #f4f4f4;
+    --color04: #dadada;
+    --color03: #9c9c9c;
+    --color02: #595959;
+    --color01: #161616;
+    --colorAccent: #22a0bc;
+
+    --title: 2.4rem;
+    --headline: 2rem;
+    --text1: 1.8rem;
+    --text2: 1.6rem;
+    --caption: 1.4rem;
+
+    --semibold: 600;
+    --medium: 500;
+
     font-size: 10px;
     font-family: Inter, sans-serif;
+    background-color: var(--color05);
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+@media (max-width: 576px) {
+    html {
+        --title: 2.4rem;
+        --headline: 1.8rem;
+        --text1: 1.6rem;
+        --text2: 1.4rem;
+        --caption: 1rem;
+    }
 }

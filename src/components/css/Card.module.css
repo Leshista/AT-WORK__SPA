@@ -1,0 +1,49 @@
+.card {
+    background-color: var(--color06);
+    display: flex;
+    gap: 2rem;
+    border-radius: 1.6rem;
+    padding: 2.4rem;
+    position: relative;
+}
+.card__image {
+    border-radius: 0.8rem;
+    width: 11.2rem;
+    height: 12rem;
+    object-fit: cover;
+}
+.cardRight__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.cardRight__topWrapper {
+}
+.card__title {
+    font-size: var(--headline);
+    font-weight: bold;
+    color: var(--colorAccent);
+}
+.card__subtitle {
+    font-size: var(--text2);
+    color: var(--color02);
+}
+.cardRightm__bottomWrapper {
+}
+.card__city {
+    font-size: var(----caption);
+    color: var(--color03);
+}
+.dropdown__wrapper {
+    position: absolute;
+    right: 2.4rem;
+    top: 3.4rem;
+}
+.dots {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+.dots:hover {
+    cursor: pointer;
+}
+.dots svg g path:hover {
+}

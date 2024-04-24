@@ -3,7 +3,7 @@ import CardList from '../components/CardList'
 
 const Index = () => {
     return (
-        <main className={classes.cardList}>
+        <main className={classes.main}>
             <CardList category='active'/>
             <CardList category='archive'/>
         </main>
