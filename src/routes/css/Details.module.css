@@ -42,6 +42,10 @@
 .details__item_active {
     color: var(--color01);
 }
+.details__item:hover {
+    cursor: pointer;
+    color: var(--colorAccent);
+}
 .details__title {
     font-size: var(--title);
     font-weight: var(--semibold);
@@ -73,6 +77,9 @@
     border-radius: 5rem;
     color: var(--color01);
     padding: 0 0.8rem 0 1.6rem;
+}
+.form__input:focus {
+    color: var(--color02);
 }
 .form__input::placeholder {
     font-size: var(--text2);
