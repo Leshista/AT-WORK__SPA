@@ -18,6 +18,9 @@ const peopleSlice = createSlice({
         setStatusHidden(state, action) {
             state.people[action.payload].status = 'hidden';
         },
+        setPersonInfo(state, action) {
+            state.people[action.payload[0]] = action.payload[1];
+        },
     },
 });
 

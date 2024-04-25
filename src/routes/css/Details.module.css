@@ -54,6 +54,8 @@
     flex-direction: column;
     gap: 2.4rem;
 }
+.form__item {
+}
 .form__label {
     display: block;
     margin-bottom: 1rem;

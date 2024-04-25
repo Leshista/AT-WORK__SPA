@@ -1,0 +1,39 @@
+.loader__wrapper {
+    width: 15rem;
+    position: fixed;
+    top: 45vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+    padding: 4rem;
+    border-radius: 1.6rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loader {
+    animation: loadingD 1.5s 0.3s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+    width: 10px;
+    height: 10px;
+    margin: 0 auto;
+    padding: 15px !important;
+    border: 7px dashed var(--colorAccent);
+    border-radius: 100%;
+    margin: 10px auto !important;
+}
+
+@keyframes loadingD {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,10 +1,23 @@
-import { Outlet } from 'react-router-dom'
+import { Suspense, useEffect, useState } from 'react';
+import { Outlet} from 'react-router-dom'
 import classes from './css/Header.module.css'
 import { logo, like, notification } from '../UI/icons'
 import me from '../UI/images/me.jpg'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPeopleData } from '../store/peopleActions'
+import Loader from '../components/Loader';
 
 const Header = () => {
-
+    const dispatch = useDispatch();
+    const people = useSelector(state => state.people.people)
+    const [fetched, setIsFetched] = useState(false)
+    useEffect(() => {
+        const fetchData = async () => {
+            await dispatch(fetchPeopleData(people))
+            setIsFetched(true)
+        }
+        fetchData()
+    },[fetched])
     return (
         <>
             <header className={classes.header}>
@@ -28,7 +41,7 @@ const Header = () => {
                     </div>
             </header>
             <div className={classes.container}>
-                <Outlet/>
+                {fetched ? <Outlet /> : <Loader />}
             </div>
         </>
 

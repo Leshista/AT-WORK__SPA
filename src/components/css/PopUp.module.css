@@ -12,7 +12,7 @@
     background-color: var(--color06);
     width: 31rem;
     position: fixed;
-    top: 40vh;
+    top: 35vh;
     left: 0;
     right: 0;
     margin: auto;
@@ -37,4 +37,5 @@
 .popUp__text {
     font-size: var(--headline);
     font-weight: var(--semibold);
+    text-align: center;
 }
