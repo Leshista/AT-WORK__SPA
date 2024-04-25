@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialPeopleState = { people: [] };
-
+// Reducer отвечающий за первоначальную загрузку людей,
+// а также за изменение их состояния
 const peopleSlice = createSlice({
     name: 'people',
     initialState: initialPeopleState,
@@ -17,9 +18,6 @@ const peopleSlice = createSlice({
         },
         setStatusHidden(state, action) {
             state.people[action.payload].status = 'hidden';
-        },
-        setPersonInfo(state, action) {
-            state.people[action.payload[0]] = action.payload[1];
         },
     },
 });

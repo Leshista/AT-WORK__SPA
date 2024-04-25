@@ -8,16 +8,24 @@ import { fetchPeopleData } from '../store/peopleActions'
 import Loader from '../components/Loader';
 
 const Header = () => {
+    // Здесь я fetch'ю данные с сервера, ожидаю их прибытие
+    // и только когда всё готово меняю state на isFetched
     const dispatch = useDispatch();
     const people = useSelector(state => state.people.people)
-    const [fetched, setIsFetched] = useState(false)
+    const [isFetched, setIsFetched] = useState(false)
     useEffect(() => {
+        // Несмотря на то, что ESLinter говорит мне,
+        // что async await тут бессмысленны, однако
+        // только благодаря ним UseEffect действительно
+        // ждёт, пока вся дата придёт, и только потом
+        // меняет state
         const fetchData = async () => {
             await dispatch(fetchPeopleData(people))
             setIsFetched(true)
         }
         fetchData()
-    },[fetched])
+    }, [])
+    
     return (
         <>
             <header className={classes.header}>
@@ -41,7 +49,9 @@ const Header = () => {
                     </div>
             </header>
             <div className={classes.container}>
-                {fetched ? <Outlet /> : <Loader />}
+                {/*Показываем louder если не загрузилось, 
+                    Контент если загрузилось */}
+                {isFetched ? <Outlet /> : <Loader />}
             </div>
         </>
 

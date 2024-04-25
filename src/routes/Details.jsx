@@ -4,16 +4,18 @@ import { back } from '../UI/icons'
 import me from '../UI/images/me.jpg'
 import PopUp from '../components/PopUp'
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { peopleActions } from '../store/peopleSlice'
+import { useSelector } from 'react-redux'
 
 const Details = () => {
-    const [popUpIsVisible, setPopUpIsVisible] = useState(false);
-    const dispatch = useDispatch()
+    // Устанавливаю, кому принадлежит эта страница
     const people = useSelector(state => state.people.people)
     const params = useParams();
     const person = people.find(person => person.username === params.username)
 
+    // Pop-up показывается при нажатии button и исчезает 
+    // по нажатию на крестик либо сам через 4 секунды
+    const [popUpIsVisible, setPopUpIsVisible] = useState(false);
+    
     const activatePopUpHandler = () => {
         setPopUpIsVisible(true)
     }
@@ -79,7 +81,7 @@ const Details = () => {
                                 <input className={classes.form__input} id='company' placeholder='Компания' defaultValue={person ? person.company['name'] : ''} required></input>
                             </div>
 
-                            <button type='submit' className={classes.form__submit}>Сохранить</button>
+                            <button className={classes.form__submit}>Сохранить</button>
                         </Form>
                     </section>
                 </article>

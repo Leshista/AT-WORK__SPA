@@ -1,6 +1,8 @@
 import { peopleActions } from './peopleSlice';
 
 export const fetchPeopleData = () => {
+    // Redux reducer thunk, ответственный за fetch данных с сервера
+    // и выдающий ошибки, если данных не найдено
     return async (dispatch) => {
         const fetchData = async () => {
             const response = await fetch(
@@ -18,6 +20,8 @@ export const fetchPeopleData = () => {
             peopleData.map((person) => (person['status'] = 'active'));
             dispatch(peopleActions.setPeople(peopleData));
         } catch (error) {
+            // Однако что-то нам всё же нужно отображать, так что в случае
+            // ошибки просто выдаём пустой массив
             dispatch(peopleActions.setPeople([]));
         }
     };
