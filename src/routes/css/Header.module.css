@@ -27,6 +27,7 @@
 }
 .logo__text {
     font-size: var(--title);
+    color: #333153;
 }
 .headerActions {
     gap: 0.4rem;

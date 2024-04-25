@@ -14,6 +14,9 @@
     height: 12rem;
     object-fit: cover;
 }
+.card__image_grayscale {
+    filter: grayscale(100%);
+}
 .cardRight__wrapper {
     width: 100%;
     display: flex;

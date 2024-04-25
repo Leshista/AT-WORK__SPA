@@ -1,17 +1,30 @@
 import classes from './css/Dropdown.module.css'
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux'
+import { peopleActions } from '../store/peopleSlice'
 
-const Dropdown = ({isArchived}) => {
+const Dropdown = ({ isArchived, username, id, status }) => {
+    const dispatch = useDispatch();
+    const activateToggler = () => {
+        dispatch(peopleActions.setStatusActive(id-1))
+    }
+    const archivateToggler = () => {
+        dispatch(peopleActions.setStatusArchive(id-1))
+    }
+    const hideToggler = () => {
+        dispatch(peopleActions.setStatusHidden(id-1))
+    }
+
     return (
         <div className={classes.dropdown}>
-            {!isArchived && <ul className={classes.dropdown__list}>
+            {status === 'active' && <ul className={classes.dropdown__list}>
                 
-                <Link to='123'><li className={classes.dropdown__item}>Редактировать</li></Link>
-                <li className={classes.dropdown__item}>Архивировать</li> 
-                <li className={classes.dropdown__item}>Скрыть</li> 
+                <Link to={username}><li className={classes.dropdown__item}>Редактировать</li></Link>
+                <li className={classes.dropdown__item} onClick={archivateToggler}>Архивировать</li> 
+                <li className={classes.dropdown__item} onClick={hideToggler}>Скрыть</li> 
             </ul>}
-            {isArchived && <ul className={classes.dropdown__list}>
-                <li className={classes.dropdown__item}>Активировать</li> 
+            {status === 'archive' && <ul className={classes.dropdown__list}>
+                <li className={classes.dropdown__item} onClick={activateToggler}>Активировать</li> 
             </ul>}
         </div>
     )

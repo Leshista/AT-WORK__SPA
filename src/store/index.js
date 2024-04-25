@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
+import peopleReducer from './peopleSlice';
 
 const store = configureStore({
     reducer: {
-        null: null,
+        people: peopleReducer,
     },
 });
 
